@@ -4,17 +4,14 @@ import pymongo
 import base64
 
 def encrypt_url(url, key):
-    print("encrypt_url")
     cipher_suite = Fernet(key)
     encrypted_url = cipher_suite.encrypt(url.encode()).decode()
-    print(encrypted_url)
     return encrypted_url
 
 # 生成一个32字节长的随机密钥
 key = Fernet.generate_key()
 
 config.ENCRYPTION_KEY = key
-print(config.ENCRYPTION_KEY)
 
 # 加密MongoDB URL
 encrypted_url = encrypt_url(config.ENCRYPTED_MONGODB_URL, config.ENCRYPTION_KEY)
