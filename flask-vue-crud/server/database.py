@@ -1,15 +1,44 @@
+from cryptography.fernet import Fernet
+import config
 import pymongo 
-import json
+import base64
 
-# 获取MongoDB Atlas连接字符串
-connection_string = client = "mongodb+srv://qinran6271:vlq7DZ312Zb4oGv5@charlietest.jcnj1mr.mongodb.net/?retryWrites=true&w=majority"
+def encrypt_url(url, key):
+    print("encrypt_url")
+    cipher_suite = Fernet(key)
+    encrypted_url = cipher_suite.encrypt(url.encode()).decode()
+    print(encrypted_url)
+    return encrypted_url
 
-# 创建MongoDB客户端
-client = pymongo.MongoClient(connection_string)
+# 生成一个32字节长的随机密钥
+key = Fernet.generate_key()
+
+config.ENCRYPTION_KEY = key
+print(config.ENCRYPTION_KEY)
+
+# 加密MongoDB URL
+encrypted_url = encrypt_url(config.ENCRYPTED_MONGODB_URL, config.ENCRYPTION_KEY)
+
+# 将加密后的URL存储在配置文件中
+config.ENCRYPTED_MONGODB_URL = encrypted_url
+
+
+def decrypt_url(encrypted_url, key):
+    cipher_suite = Fernet(key)
+    decrypted_url = cipher_suite.decrypt(encrypted_url.encode()).decode()
+ 
+    return decrypted_url
+
+decrypted_url = decrypt_url(config.ENCRYPTED_MONGODB_URL, config.ENCRYPTION_KEY)
+
+
+# 使用解密后的URL建立数据库连接
+client = pymongo.MongoClient(decrypted_url)
 
 # 连接到数据库
 db = client.hi
 collection = db.hey
+
 
 
 
