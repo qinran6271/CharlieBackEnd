@@ -1,9 +1,9 @@
 version: "3.7"
 services:
-  # frontend:
-  #   build: ./frontend
-  #   ports:
-  #     - "80:80"
+  frontend:
+    build: ../charlieComUI
+    ports:
+      - "80:80"
   backend:
     build: ./flask-vue-crud/server
     ports:
