@@ -4,7 +4,7 @@ from database import collection
 truth_or_dare = Blueprint('truth_or_dare', __name__)
 
 
-@truth_or_dare.route('/', methods=['GET'])
+@truth_or_dare.route('/truthordare', methods=['GET'])
 def index():
     
     document = collection.find()[1]
