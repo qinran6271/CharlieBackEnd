@@ -17,9 +17,9 @@ RUN apt-get update && apt-get install -y \
     && pip install --no-cache-dir flask flask_cors pymongo cryptography
 
 # 设置静态文件目录
-ENV STATIC_URL /static
-ENV STATIC_PATH /app/dist/static
-
+# ENV STATIC_URL /static
+# ENV STATIC_PATH /app/dist/static
+# COPY index.html /app/templates/
 # Make port 80 available to the world outside this container
 EXPOSE 5000
 

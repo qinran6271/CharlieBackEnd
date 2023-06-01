@@ -4,11 +4,12 @@ from flask_compress import Compress
 from truth_or_dare import truth_or_dare
 import requests
 
-
-# app = Flask(__name__)
+# 路径可能需要更改, 到时候使用前端的dist文件
 app = Flask(__name__,
-            static_folder = "../charlieComUI/dist",
+            static_folder = "../dist/static",
+            template_folder = "../dist"
             )
+
 CORS(app)
 # 启用 Gzip 压缩
 app.config["COMPRESS_REGISTER"] = False  # disable default compression of all eligible requests
@@ -19,25 +20,30 @@ compress.init_app(app)
 # app.config['COMPRESS_MIN_SIZE'] = 500
 
     
-@app.route('/')
-def index():
-    return send_from_directory(app.static_folder, 'index.html')
+# 打开静态文件（不一定有用先保留）
+# @app.route('/')
+# def index():
+#     # return send_from_directory(app.static_folder, 'index.html')
+#     return render_template('../../../charlieComUI/dist2/index.html')
 
-@app.route('/<path:filename>')
-def serve_static(filename):
-    print(filename)
-    return send_from_directory(app.static_folder, filename)
+# @app.route('/<path:filename>')
+# def serve_static(filename):
+#     print(filename)
+#     return send_from_directory(app.static_folder, filename)
 
-# @app.route('/', defaults={'path': ''})
+
+# for history mode （放服务器的话去要配合dockerfile，还没改）
+@app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):
-    if app.debug:
-        # return requests.get('http://localhost:8080/{}'.format(path)).text
-        return send_from_directory(app.static_folder, 'index.html')
+    return render_template('index.html')
+#     if app.debug:
+#         # return requests.get('http://43.154.208.135/{}'.format(path)).text
+
 
 
 app.register_blueprint(truth_or_dare)
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(debug = True, host='0.0.0.0', port=5000)
