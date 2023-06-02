@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     libffi-dev \
     python3-dev \
-    && pip install --no-cache-dir flask flask_cors pymongo cryptography
+    && pip install --no-cache-dir flask flask_cors pymongo cryptography flask_compress requests
 
 # 设置静态文件目录
 # ENV STATIC_URL /static
