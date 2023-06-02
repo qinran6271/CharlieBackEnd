@@ -6,7 +6,7 @@ cd server
 
 source env/bin/activate
 
-(pip install Flask==2.2.3 Flask-Cors==3.0.10 )
+(pip install Flask==2.2.3 Flask-Cors==3.0.10 Flask-Compress requests)
 
 FLASK_APP=app.py flask run 或 flask run
 
