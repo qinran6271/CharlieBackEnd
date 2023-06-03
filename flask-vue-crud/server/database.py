@@ -33,8 +33,10 @@ decrypted_url = decrypt_url(config.ENCRYPTED_MONGODB_URL, config.ENCRYPTION_KEY)
 client = pymongo.MongoClient(decrypted_url)
 
 # 连接到数据库
-db = client.hi
-collection = db.hey
+# db = client.hi
+# collection = db.hey
+db = client.Charlie
+truth_dare = db.truth_or_dare
 
 
 
