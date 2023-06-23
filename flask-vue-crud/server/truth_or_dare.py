@@ -15,7 +15,7 @@ def truth():
     num = int(request.args.get('num'))
     y_or_n = request.args.get('yOrN')
 
-    # 构建查询参数
+    # # 构建查询参数
     query = {
         "type": data_type,
         "person": person,
@@ -32,7 +32,7 @@ def truth():
     # 以下是测试，可删除
     # query = {
     #     "type": "真心话",
-    #     "真心话": "我",
+    #     "person": "我",
     #     "num": 11,
     #     "yOrN": "NO"
     # }
