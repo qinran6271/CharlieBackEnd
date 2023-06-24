@@ -37,8 +37,8 @@ client = pymongo.MongoClient(decrypted_url)
 # collection = db.hey
 db = client.Charlie
 truth_dare = db.truth_or_dare
-chapters = db.cahpters
-sub_chapters = db.sub_cahpters
+# chapters = db.cahpters
+# sub_chapters = db.sub_cahpters
 
 
 
