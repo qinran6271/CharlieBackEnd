@@ -35,7 +35,7 @@ client = pymongo.MongoClient(decrypted_url)
 # 连接到数据库
 # db = client.hi
 # collection = db.hey
-db = client.Charlie
+db = client.CharlieDB
 truth_dare = db.truth_or_dare
 # chapters = db.cahpters
 # sub_chapters = db.sub_cahpters

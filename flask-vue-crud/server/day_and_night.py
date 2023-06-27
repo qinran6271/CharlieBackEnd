@@ -21,6 +21,7 @@ def dayNight():
 
     #     chap_data =  chapters.find_one({'chap_num':chap})
     #     data['chap_title'] = chap_data['name']
+        # data['videoUrl'] = chap_data['video']
 
     #     return jsonify(data)
 
