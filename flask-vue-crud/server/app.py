@@ -2,7 +2,7 @@ from flask import Flask, render_template, send_from_directory
 from flask_cors import CORS
 from flask_compress import Compress
 from truth_or_dare import truth_or_dare
-# from day_and_night import day_and_night
+from day_and_night import day_and_night
 import requests
 
 # 路径可能需要更改, 到时候使用前端的dist文件
@@ -44,7 +44,7 @@ def catch_all(path):
 
 
 app.register_blueprint(truth_or_dare)
-# app.register_blueprint(day_and_night)
+app.register_blueprint(day_and_night)
 
 
 if __name__ == '__main__':
