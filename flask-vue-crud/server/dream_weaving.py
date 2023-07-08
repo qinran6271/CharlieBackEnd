@@ -13,20 +13,20 @@ def dream():
     chap_name = request.args.get('chap_name')
     subchap_name = request.args.get('subchap_name')
     totalNum = int(request.args.get('totalNum'))
-    num = int(request.args.get('num'))
-    type = request.args.get('type')
-    content = request.args.get('content')
+    # num = int(request.args.get('num'))
+    # type = request.args.get('type')
+    # content = request.args.get('content')
 
     query = {
         "chap_name": chap_name,
         "subchap_name": subchap_name,
         "totalNum": totalNum,
-        "num": num,
-        "type": type,
-        "content": content
+        # "num": num,
+        # "type": type,
+        # "content": content
     }
-    result = dream_weaving.find_one(query)
-    keys_to_remove = ['_id', 'chap_name', 'subchap_name', 'totalNum', 'num', 'type', 'content']
+    result = weaving.find_one(query)
+    keys_to_remove = ['_id']
     for key in keys_to_remove:
         result.pop(key, None)
 
