@@ -39,9 +39,9 @@ db = client.CharlieDB
 truth_dare = db.truth_or_dare
 chapters = db.day_and_night_chaps
 sub_chapters = db.day_and_night_subchaps
+weaving = db.dream_weaving
 furniture = db.furniture
 guzi = db.guzi
-
 
 
 

@@ -3,9 +3,11 @@ from flask_cors import CORS
 from flask_compress import Compress
 from truth_or_dare import truth_or_dare
 from day_and_night import day_and_night
+from dream_weaving import dream_weaving
+import requests
+# form CharlieBackEnd.server
 from guzi import guzi
 from furniture import furniture
-import requests
 
 # 路径可能需要更改, 到时候使用前端的dist文件
 app = Flask(__name__,
@@ -47,9 +49,9 @@ def catch_all(path):
 
 app.register_blueprint(truth_or_dare)
 app.register_blueprint(day_and_night)
+app.register_blueprint(dream_weaving)
 app.register_blueprint(guzi)
 app.register_blueprint(furniture)
-
 
 if __name__ == '__main__':
     app.run(debug = True, host='0.0.0.0', port=5000)
