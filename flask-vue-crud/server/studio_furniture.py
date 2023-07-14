@@ -6,18 +6,32 @@ studio_furniture = Blueprint('furniture', __name__)
 
 @studio_furniture.route('/studio/furniture', methods=['GET'])
 def studioFurniture():
-    # 默认返回内容
-    return_dict = {'return_code': '200', 'return_info': '成功', 'result': None}
+    if request.args:
+        # 处理附带参数的情况
+        type_name = request.args.get('type_name')  # 工作室-家具类型：【画板】
+        query = {
+            "type_name": type_name,
+        }
+        data = furniture.find(query)
+        data = list(data)
+        result = []
+        keys_to_remove = ['_id']
+        for x in data:
+            for key in keys_to_remove:
+                x.pop(key, None)
+                result.append(x)
 
-    data = furniture.find()
-    data = list(data)
-    result = []
-    keys_to_remove = ['_id', 'name', 'detail', 'materials', 'memory', 'type', 'type_name', 'file_path']
-    for x in data:
-        for key in keys_to_remove:
-            x.pop(key, None)
-        result.append(x)
-    return jsonify(result)
+        return jsonify(result)
 
-    
-   
+    else:
+        data = furniture.find()
+        data = list(data)
+        result = []
+        keys_to_remove = ['_id']
+        for x in data:
+            for key in keys_to_remove:
+                x.pop(key, None)
+            result.append(x)
+        return jsonify(result)
+
+
