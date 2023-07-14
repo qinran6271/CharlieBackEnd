@@ -18,9 +18,9 @@ def chatFunc():
         return jsonify(result)
 
     elif 'indexcode' in request.args:
-        chat_type = request.args.get('indexcode')
+        indexcode = request.args.get('indexcode')
         query = {
-            "indexCode": chat_type,
+            "indexCode": indexcode,
         }
         result = chat_details.find_one(query)
         keys_to_remove = ['_id','indexCode']
@@ -30,9 +30,9 @@ def chatFunc():
         return jsonify(result)
     
     elif 'callcode' in request.args:
-        chat_type = request.args.get('callcode')
+        callcode = request.args.get('callcode')
         query = {
-            "callCode": chat_type,
+            "callCode": callcode,
         }
         result = chat_calls.find_one(query)
         keys_to_remove = ['_id','callCode']

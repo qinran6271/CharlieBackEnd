@@ -50,4 +50,6 @@ profiledb = db.profile_detail
 chat_calls = db.chat_calls
 chat_overview = db.chat_overview
 chat_details= db.chat_details
+moments_details = db.moments_details
+moments_overview = db.moments_overview
 

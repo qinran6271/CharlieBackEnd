@@ -14,6 +14,7 @@ from lingeringSound import lingering_sound
 from profile import profile
 from track import track
 from chat import chat
+from moments import moments
 # 路径可能需要更改, 到时候使用前端的dist文件
 app = Flask(__name__,
             static_folder = "../dist/static",
@@ -64,6 +65,8 @@ app.register_blueprint(lingering_sound)
 app.register_blueprint(track)
 app.register_blueprint(profile)
 app.register_blueprint(chat)
+app.register_blueprint(moments)
+
 
 
 
