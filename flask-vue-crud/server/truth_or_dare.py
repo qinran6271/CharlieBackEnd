@@ -29,20 +29,5 @@ def truth():
     
     return jsonify(result)
 
-    # 以下是测试，可删除
-    # query = {
-    #     "type": "真心话",
-    #     "person": "我",
-    #     "num": 11,
-    #     "yOrN": "NO"
-    # }
 
-    # result = truth_dare.find_one(query)
-    # keys_to_remove = ['_id', 'type', 'person', 'num', 'yOrN']
-    # for key in keys_to_remove:
-    #     result.pop(key, None)
-    # # result.pop('_id', None)
-    # print(result)
-    # return jsonify(result)
-    
    

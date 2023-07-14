@@ -8,11 +8,12 @@ import requests
 # form CharlieBackEnd.server
 from guzi import merch
 from studio_furniture import studio_furniture
-from memories_album import memories
+# from memories_album import memories
 from rewind import rewind
 from lingeringSound import lingering_sound
 from profile import profile
 from track import track
+from chat import chat
 # 路径可能需要更改, 到时候使用前端的dist文件
 app = Flask(__name__,
             static_folder = "../dist/static",
@@ -56,12 +57,13 @@ app.register_blueprint(day_and_night)
 app.register_blueprint(dream_weaving)
 app.register_blueprint(merch)
 app.register_blueprint(studio_furniture)
-app.register_blueprint(memories)
+#app.register_blueprint(memories)
 
 app.register_blueprint(rewind)
 app.register_blueprint(lingering_sound)
 app.register_blueprint(track)
 app.register_blueprint(profile)
+app.register_blueprint(chat)
 
 
 
