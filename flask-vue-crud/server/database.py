@@ -52,4 +52,5 @@ chat_overview = db.chat_overview
 chat_details= db.chat_details
 moments_details = db.moments_details
 moments_overview = db.moments_overview
+vinyl_collection = db.vinyl
 
