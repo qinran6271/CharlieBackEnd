@@ -25,7 +25,6 @@ def talkFunc():
         data = talk_coll.find()
         data = list(data)
         result = []
-        keys_to_remove = ['_id','talk_content']
         
         for x in data:
             result.append(x["talk_name"])
