@@ -17,7 +17,7 @@ def dayNight():
             "subchap_name": subchap,
         }
         data = sub_chapters.find_one(query)
-        keys_to_remove = ['_id','subchap_type','subchap_name']
+        keys_to_remove = ['_id','subchap_type','subchap_name','chap_num']
         for key in keys_to_remove:
             data.pop(key, None)
 

@@ -17,6 +17,7 @@ from chat import chat
 from moments import moments
 from vinyl import vinyl
 from characters import characters
+from talk import talk
 
 # 路径可能需要更改, 到时候使用前端的dist文件
 app = Flask(__name__,
@@ -71,7 +72,7 @@ app.register_blueprint(chat)
 app.register_blueprint(moments)
 app.register_blueprint(vinyl)
 app.register_blueprint(characters)
-
+app.register_blueprint(talk)
 
 if __name__ == '__main__':
     app.run(debug = True, host='0.0.0.0', port=5000)

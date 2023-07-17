@@ -54,4 +54,4 @@ moments_details = db.moments_details
 moments_overview = db.moments_overview
 vinyl_collection = db.vinyl
 characters_collection = db.characters
-
+talk_coll = db.talk
