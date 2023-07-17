@@ -16,6 +16,8 @@ from track import track
 from chat import chat
 from moments import moments
 from vinyl import vinyl
+from characters import characters
+
 # 路径可能需要更改, 到时候使用前端的dist文件
 app = Flask(__name__,
             static_folder = "../dist/static",
@@ -68,9 +70,7 @@ app.register_blueprint(profile)
 app.register_blueprint(chat)
 app.register_blueprint(moments)
 app.register_blueprint(vinyl)
-
-
-
+app.register_blueprint(characters)
 
 
 if __name__ == '__main__':
