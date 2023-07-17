@@ -13,6 +13,7 @@ def dayNight():
         subchap = request.args.get('subchap') # “章节数-小节数”
 
         query = {
+            "chap_num" : int(chap),
             "subchap_name": subchap,
         }
         data = sub_chapters.find_one(query)
