@@ -41,9 +41,16 @@ chapters = db.day_and_night_chaps
 sub_chapters = db.day_and_night_subchaps
 weaving = db.dream_weaving
 furniture = db.furniture
-guzi = db.guzi
+guzi = db.merch
+memories_album = db.memories_album
 rewinddb = db.rewind
 lingering = db.volume
 trackdb = db.track
 profiledb = db.profile_detail
+chat_calls = db.chat_calls
+chat_overview = db.chat_overview
+chat_details= db.chat_details
+moments_details = db.moments_details
+moments_overview = db.moments_overview
+vinyl_collection = db.vinyl
 
