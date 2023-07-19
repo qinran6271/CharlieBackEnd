@@ -8,7 +8,7 @@ import requests
 # form CharlieBackEnd.server
 from guzi import merch
 from studio_furniture import studio_furniture
-# from memories_album import memories
+from memories_album import memories
 from rewind import rewind
 from lingeringSound import lingering_sound
 from profile import profile
@@ -64,7 +64,7 @@ app.register_blueprint(day_and_night)
 app.register_blueprint(dream_weaving)
 app.register_blueprint(merch)
 app.register_blueprint(studio_furniture)
-#app.register_blueprint(memories)
+app.register_blueprint(memories)
 
 app.register_blueprint(rewind)
 app.register_blueprint(lingering_sound)
