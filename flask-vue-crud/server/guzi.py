@@ -10,10 +10,18 @@ def merchandise():
     if request.args:
         # 处理附带参数的情况
         type = request.args.get('type')  # 谷子类型：【徽章】
+        name = request.args.get('name')  # 谷子名字：【满赠透卡】
         query = {
-            "type": type
         }
-        # print(query)
+        if not type is None:
+            query.update({"type": type})
+
+        if not name is None:
+            condition = {}
+            condition['$regex'] = name
+            query.update({"name": condition})
+
+        print(query)
         data = guzi.find(query)
         data = list(data)
         # print(data)
