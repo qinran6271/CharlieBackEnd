@@ -23,13 +23,13 @@ from video_call import video_call
 
 # 路径可能需要更改, 到时候使用前端的dist文件
 app = Flask(__name__,
-            static_folder = "../dist/static",
-            template_folder = "../dist"
+            static_folder = ".。/dist/static",
+            template_folder = "./dist"
             )
 
 CORS(app)
 # 启用 Gzip 压缩
-app.config["COMPRESS_REGISTER"] = False  # disable default compression of all eligible requests
+app.config['Compress_Algorithm'] = 'gzip'
 compress = Compress()
 compress.init_app(app)
 # app.config['COMPRESS_MIMETYPES'] = ['text/html', 'text/css', 'text/javascript', 'application/javascript']
