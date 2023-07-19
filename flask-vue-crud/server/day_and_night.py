@@ -13,10 +13,11 @@ def dayNight():
         subchap = request.args.get('subchap') # “章节数-小节数”
 
         query = {
+            "chap_num" : int(chap),
             "subchap_name": subchap,
         }
         data = sub_chapters.find_one(query)
-        keys_to_remove = ['_id','subchap_type','subchap_name']
+        keys_to_remove = ['_id','subchap_type','subchap_name','chap_num']
         for key in keys_to_remove:
             data.pop(key, None)
 
@@ -32,7 +33,7 @@ def dayNight():
         data = chapters.find()
         data = list(data)
         result = []
-        keys_to_remove = ['_id','name','intro','behind','image','behind']
+        keys_to_remove = ['_id','name','intro','image']
         for x in data:
             for key in keys_to_remove:
                 x.pop(key, None)
