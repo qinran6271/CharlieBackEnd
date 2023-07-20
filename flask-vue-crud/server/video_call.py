@@ -7,15 +7,29 @@ video_call = Blueprint('video_call', __name__)
 
 @video_call.route('/videocall', methods=['GET'])
 def call():
-    entry = request.args.get('entry')
+    if request.args:
+        entry = request.args.get('entry')
 
-    query = {
-        "entry": entry
-    }
+        query = {
+            "entry": entry
+        }
 
-    result = video_calldb.find_one(query)
-    keys_to_remove = ['_id', 'entry']
-    for key in keys_to_remove:
-        result.pop(key, None)
+        result = video_calldb.find_one(query)
+        keys_to_remove = ['_id', 'entry']
+        for key in keys_to_remove:
+            result.pop(key, None)
 
-    return jsonify(result)
+        return jsonify(result)
+    else:
+        entrys = video_calldb.find()
+
+        data = []
+        keys_to_remove = ['_id', "videoLink"]
+        for entry in entrys:
+            for key in keys_to_remove:
+                entry.pop(key, None)
+            data.append(entry)
+        
+        result = {"totalNum": len(data), "data": data}
+        
+        return jsonify(result)
