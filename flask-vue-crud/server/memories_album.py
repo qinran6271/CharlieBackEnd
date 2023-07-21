@@ -12,18 +12,19 @@ def card():
         start_level = request.args.get('start_level')  # 灵犀相册星级：【1星】
         type = request.args.get('type')  # 灵犀相册一段，二段：【一段：default；二段：up】
         name = request.args.get('name')  # 灵犀相册名字：【时与玫瑰】
-        if type is None:
-            type="default"
-
         query = {
-            "start_level": start_level,
-            "type": type
         }
+        if not type is None:
+            query.update({"type": type})
+
+        if not start_level is None:
+            query.update({"start_level": start_level})
+
         if not name is None:
             query.update({"name": name})
 
+        print(query)
         data = memories_album.find(query)
-        print(data)
         data = list(data)
         result = []
         keys_to_remove = ['_id']
