@@ -28,6 +28,7 @@ def call():
         for entry in entrys:
             for key in keys_to_remove:
                 entry.pop(key, None)
+            entry["content"] = entry["content"][0]
             data.append(entry)
         
         result = {"totalNum": len(data), "data": data}
