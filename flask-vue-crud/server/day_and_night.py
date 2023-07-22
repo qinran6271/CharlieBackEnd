@@ -33,7 +33,7 @@ def dayNight():
         data = chapters.find()
         data = list(data)
         result = []
-        keys_to_remove = ['_id','name','intro','behind','image','behind']
+        keys_to_remove = ['_id','name','intro','image']
         for x in data:
             for key in keys_to_remove:
                 x.pop(key, None)

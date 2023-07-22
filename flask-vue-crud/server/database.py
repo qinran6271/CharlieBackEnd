@@ -58,3 +58,4 @@ talk_coll = db.talk
 details = db.charlie_details
 film_cards_coll = db.film_cards
 film_chaps_coll = db.film_chaps
+video_calldb = db.video_call

@@ -6,4 +6,5 @@ __pycache__/
 
 config.py
 templates
-# dist
+dist
+dist copy
