@@ -19,6 +19,8 @@ from vinyl import vinyl
 from characters import characters
 from talk import talk
 from charlie_details import charlie_details
+from film import film
+from video_call import video_call
 
 # 路径可能需要更改, 到时候使用前端的dist文件
 app = Flask(__name__,
@@ -76,6 +78,7 @@ app.register_blueprint(characters)
 app.register_blueprint(talk)
 app.register_blueprint(charlie_details)
 app.register_blueprint(video_call)
+app.register_blueprint(film)
 
 if __name__ == '__main__':
     app.run(debug = True, host='0.0.0.0', port=5000)
