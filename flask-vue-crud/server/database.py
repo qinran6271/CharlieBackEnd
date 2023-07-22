@@ -56,3 +56,5 @@ vinyl_collection = db.vinyl
 characters_collection = db.characters
 talk_coll = db.talk
 details = db.charlie_details
+film_cards_coll = db.film_cards
+film_chaps_coll = db.film_chaps
