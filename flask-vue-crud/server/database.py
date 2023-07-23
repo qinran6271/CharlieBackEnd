@@ -57,3 +57,5 @@ characters_collection = db.characters
 talk_coll = db.talk
 details = db.charlie_details
 video_calldb = db.video_call
+date_overviewdb = db.date_overview
+datedb = db.date_details

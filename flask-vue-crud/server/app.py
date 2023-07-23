@@ -20,6 +20,10 @@ from characters import characters
 from talk import talk
 from charlie_details import charlie_details
 from video_call import video_call
+from date_overview import date_overview
+from date import date
+
+
 
 # 路径可能需要更改, 到时候使用前端的dist文件
 app = Flask(__name__,
@@ -77,6 +81,7 @@ app.register_blueprint(characters)
 app.register_blueprint(talk)
 app.register_blueprint(charlie_details)
 app.register_blueprint(video_call)
-
+app.register_blueprint(date_overview)
+app.register_blueprint(date)
 if __name__ == '__main__':
     app.run(debug = True, host='0.0.0.0', port=5000)
