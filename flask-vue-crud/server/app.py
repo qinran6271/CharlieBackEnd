@@ -19,6 +19,7 @@ from vinyl import vinyl
 from characters import characters
 from talk import talk
 from charlie_details import charlie_details
+from film import film
 from video_call import video_call
 from date_overview import date_overview
 from date import date
@@ -81,7 +82,10 @@ app.register_blueprint(characters)
 app.register_blueprint(talk)
 app.register_blueprint(charlie_details)
 app.register_blueprint(video_call)
+app.register_blueprint(film)
 app.register_blueprint(date_overview)
 app.register_blueprint(date)
+
+
 if __name__ == '__main__':
     app.run(debug = True, host='0.0.0.0', port=5000)
