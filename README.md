@@ -17,6 +17,12 @@ FLASK_APP=app.py flask run 或 flask run
 
 添加config.py，复制config_template.py到config.py里，并将ENCRYPTED_MONGODB_URL后引号部分修改
 
+# Links
+WebSites: http://charlielove.cn/
+Frontend: https://github.com/gojuyaneko/charlieComUI
+
+# WebSite Example
+![IMG_8960](https://github.com/user-attachments/assets/f9584d17-4f52-4779-9983-caed5b0cc5d2)
 ![IMG_8976](https://github.com/user-attachments/assets/36aa06ef-5a58-4fd8-b566-68f10f5aaaa2)
 ![IMG_8975](https://github.com/user-attachments/assets/3c278fbc-4183-46d5-a8ee-ec4469b3b348)
 ![IMG_8974](https://github.com/user-attachments/assets/8f79f4d2-0595-4fb2-96d3-a10a9aa8b6ca)
@@ -33,4 +39,4 @@ FLASK_APP=app.py flask run 或 flask run
 ![IMG_8963](https://github.com/user-attachments/assets/cd4e5a6d-a2fb-4fef-931f-0c99e5e3fd0b)
 ![IMG_8962](https://github.com/user-attachments/assets/a6229d36-1d24-406e-82b4-0caa8d2cf4e0)
 ![IMG_8961](https://github.com/user-attachments/assets/c7dce8f3-cd7a-4e93-b8ab-904dfeba5460)
-![IMG_8960](https://github.com/user-attachments/assets/f9584d17-4f52-4779-9983-caed5b0cc5d2)
+
